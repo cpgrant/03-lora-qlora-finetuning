@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Model artifacts
+outputs/
+checkpoints/
+*.safetensors
+*.bin
+
+# Cache and temporary files
+.cache/
+.pytest_cache/
+*.tmp
+*.bak
+
+# Downloaded dataset archives
+data/downloaded/*.zip
+data/downloaded/*.xlsx
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+
+# Imported dataset working copies
+data/downloaded/

@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "method": "LoRA",
+  "training_seconds": 62.72,
+  "peak_gpu_memory_gib": 1.363,
+  "training_loss": 1.0891432546948394,
+  "evaluation_loss": 3.410203218460083,
+  "train_examples": 200,
+  "eval_examples": 40
+}

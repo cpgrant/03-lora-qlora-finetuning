@@ -1,0 +1,11 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "method": "QLoRA",
+  "quantization": "4-bit NF4",
+  "training_seconds": 5.5,
+  "peak_gpu_memory_gib": 0.951,
+  "training_loss": 3.197755495707194,
+  "evaluation_loss": 3.4430758953094482,
+  "train_examples": 6,
+  "eval_examples": 2
+}

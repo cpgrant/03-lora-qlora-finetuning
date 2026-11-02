@@ -1,0 +1,82 @@
+{
+  "What does LoRA stand for?": {
+    "base": {
+      "answer": "LoRA stands for **LoRA (Low-Magnitude Adaptation)**. It is a technique used in large language models (LLMs) to improve performance by making small, localized adjustments to the model's weights. This is done to enhance the model's ability to learn from a specific task or data set without requiring large-scale training.",
+      "tokens": 68,
+      "seconds": 2.016,
+      "tokens_per_second": 33.73
+    },
+    "lora": {
+      "answer": "LoRA stands for Low-Rank Adaptation.",
+      "tokens": 11,
+      "seconds": 0.402,
+      "tokens_per_second": 27.35
+    },
+    "qlora": {
+      "answer": "LoRA stands for Low-Rank Adaptation.",
+      "tokens": 11,
+      "seconds": 0.444,
+      "tokens_per_second": 24.8
+    }
+  },
+  "How does LoRA differ from full fine-tuning?": {
+    "base": {
+      "answer": "LoRA (LoRA: Low-Magnitude Adaptation) and full fine-tuning are both techniques used to improve the performance of a model, but they differ in their approach and effectiveness. Here's a breakdown:\n\n### 1. **Full Fine-Tuning**\n- **Definition**: This is the standard method where you train a model on a large dataset (e.g., the entire dataset of the task) and then fine-tune it on a smaller, specific dataset (e.g., a task-specific dataset).\n- **Advantages**:\n  - It is effective for tasks that require a large amount of data and a wide range of parameters.\n  - It can be used for tasks like image classification, text generation, or other NLP tasks.\n- **Disadvantages**:\n  - It can be time-consuming and may require more data.\n  - It can lead to overfitting if the model is too large or the training data is not representative.\n\n### 2. **Lo",
+      "tokens": 200,
+      "seconds": 4.864,
+      "tokens_per_second": 41.12
+    },
+    "lora": {
+      "answer": "LoRA freezes a base model and trains a low-rank adapter that modifies matrix activations. Full fine-tuning trains a frozen base and trainable learned fluent parameters.",
+      "tokens": 33,
+      "seconds": 0.967,
+      "tokens_per_second": 34.11
+    },
+    "qlora": {
+      "answer": "LoRA reduces the fine-tuning parameter count by using a lower rank for the adapter objective. Full fine-tuning uses a higher rank for the same objective and fewer parameters.",
+      "tokens": 36,
+      "seconds": 1.778,
+      "tokens_per_second": 20.25
+    }
+  },
+  "Why does QLoRA use 4-bit quantization?": {
+    "base": {
+      "answer": "QLoRA (Quantized LoRA) uses 4-bit quantization for several reasons, primarily to improve performance and reduce computational overhead. Here's a breakdown of the key reasons:\n\n### 1. **Reduced Computational Overhead**\n   - 4-bit quantization reduces the number of bits used to represent weights, which in turn reduces the number of operations required during training and inference. This is especially beneficial for large models where the number of parameters is high.\n\n### 2. **Improved Efficiency**\n   - 4-bit quantization allows for more efficient memory usage and faster processing times. This is crucial for deploying models in resource-constrained environments.\n\n### 3. **Better Precision**\n   - While 4-bit quantization reduces precision, it maintains a balance between precision and efficiency. It can still provide accurate results for most tasks, especially when the model is fine-tuned on a dataset with sufficient precision.\n\n### 4. **Support for Large Models**\n   - 4-bit",
+      "tokens": 200,
+      "seconds": 4.84,
+      "tokens_per_second": 41.32
+    },
+    "lora": {
+      "answer": "QLoRA uses 4-bit quantization for the frozen adapter's attention and other low-precision components, while higher-precision trainable layers are enabled. This reduces the effective precision of the frozen adapter and allows higher-precision computations to consume more memory and processing resources.",
+      "tokens": 55,
+      "seconds": 1.679,
+      "tokens_per_second": 32.75
+    },
+    "qlora": {
+      "answer": "QLoRA uses 4-bit quantization to reduce memory requirements while preserving enough precision for gradient computation.",
+      "tokens": 22,
+      "seconds": 1.25,
+      "tokens_per_second": 17.6
+    }
+  },
+  "Explain how low-rank matrices reduce trainable parameters.": {
+    "base": {
+      "answer": "Low-rank matrices are used in machine learning and deep learning to reduce the number of trainable parameters in a model. Here's a simplified explanation:\n\n### **How Low-Rank Matrices Reduce Trainable Parameters:**\n\n1. **Reduces the Number of Parameters:**\n   - In traditional models, such as linear models or neural networks, the number of parameters (weights) is proportional to the size of the input space.\n   - A low-rank matrix (e.g., a matrix of rank $ r $) can represent the relationship between inputs and outputs with fewer parameters. For example, if a model has $ n \\times n $ parameters, a low-rank matrix with rank $ r $ can represent the same relationship with $ r $ parameters.\n\n2. **Improves Model Performance:**\n   - By reducing the number of parameters, the model becomes more efficient and can generalize better to unseen data.\n   - This is especially useful in deep learning, where the number of parameters grows exponentially",
+      "tokens": 200,
+      "seconds": 5.067,
+      "tokens_per_second": 39.47
+    },
+    "lora": {
+      "answer": "Low-rank matrices approximate matrix multiplication with trainable matrices. For example, if r = 2 and R = 2x2, the product of two 2x2 matrices is at most 4x4. This reduces the number of parameters needed to represent the product, allowing learned factors to update more easily.",
+      "tokens": 65,
+      "seconds": 2.036,
+      "tokens_per_second": 31.92
+    },
+    "qlora": {
+      "answer": "Low-rank matrices reduce trainable parameters by approximating the matrix multiplication with a rank-deficient matrix. For an n\u00d7m rank r matrix, the resulting rank-r tensor has r+1 dimensions. Using lower-rank matrices can preserve parameter count while still capturing important matrix relationships.",
+      "tokens": 57,
+      "seconds": 2.427,
+      "tokens_per_second": 23.49
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "AI-P03-0001",
+  "domain": "lora",
+  "concept": "low_rank_adaptation",
+  "question_type": "definition",
+  "difficulty": "basic",
+  "question": "What does LoRA stand for?",
+  "reference_answer": "LoRA stands for Low-Rank Adaptation.",
+  "review_status": "pending",
+  "split": "train"
+}
